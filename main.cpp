@@ -1,14 +1,13 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
 class AlgoritmoX{
 private:
-    int clave[2] = {10,9};
-    vector <char> palabra;
+    int clave[2] = {11,7};
+    string palabra;
 public:
-    vector<char> Cifrado(string& mensaje){
+    string Cifrado(string& mensaje){
         for (int i = 0; i <= clave[0]*clave[1]-mensaje.size()+1; ++i) {
             mensaje = mensaje + " ";
         }
@@ -20,7 +19,7 @@ public:
         }
         return palabra;
     }
-    vector<char> Decifrado(string mensaje){
+    string Decifrado(string mensaje){
 
         for (int i = 0; i < clave[0]; ++i) {
             for (int j = 0; j < clave[1]; ++j) {
@@ -33,17 +32,10 @@ public:
 };
 
 int main(){
-    string mensaje = "To decrypt, all one must do is wrap the leather strip around the rod and read across";
-    vector <char> almacen;
-    almacen = AlgoritmoX().Cifrado(mensaje);
-    for (int i = 0; i < almacen.size(); ++i) {
-        mensaje[i] = almacen[i];
-    }
+    string mensaje = "and so discovers the continuity of the message. And the parchment";
+    mensaje = AlgoritmoX().Cifrado(mensaje);
     cout<<"Mensaje cifrado: "<<mensaje<<endl;
-    almacen = AlgoritmoX().Decifrado(mensaje);
-    for (int i = 0; i < almacen.size(); ++i) {
-        mensaje[i] = almacen[i];
-    }
+    mensaje = AlgoritmoX().Decifrado(mensaje);
     cout<<"Mensaje decifrado: "<<mensaje;
 
 
