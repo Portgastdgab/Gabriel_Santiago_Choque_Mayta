@@ -2,7 +2,7 @@
 
 using namespace std;
 
-class Rail_fence {
+class Rail_fance {
 private:
     int clave = 5;
     int patron[2]; //patron de 2 variables que se repite en cada fila de la matriz
@@ -72,8 +72,8 @@ public:
 
 int main() {
     string mensaje = "Gabriel Santiago";
-    mensaje = Rail_fence().Chiper(mensaje);
+    mensaje = Rail_fance().Chiper(mensaje);
     cout << "Mensaje Cifrado: " << mensaje << endl;
-    mensaje = Rail_fence().Deschiper(mensaje);
+    mensaje = Rail_fance().Deschiper(mensaje);
     cout << "Mensaje Decifrado: " << mensaje;
 }
