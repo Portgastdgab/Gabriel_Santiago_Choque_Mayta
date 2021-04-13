@@ -6,6 +6,12 @@ class Cesar{
     string alfabeto = "abcdefghijklmnopqrstuvwxyz";
     string palabra;
     int clave =3 ;
+
+    int modulo(int a, int n){
+        int r = a-n*(a/n);
+        r = r+(r<0)*n;
+        return r;
+    }
     int l_a_n(char letra){
         for (int i = 0; i < 26; ++i) {
             if (letra == alfabeto[i]){
@@ -15,28 +21,28 @@ class Cesar{
     }
 
     char n_a_l(int pos){
-        if (pos > 25){
-            return alfabeto[pos-26];
-        }else if (pos < 0){
-            return alfabeto[pos+26];
-        }
-        else{
-            return alfabeto[pos];
-        }
-
-
+        return alfabeto[pos%26];
     }
 
 public:
-    int Cifrado(string mensaje){
+    string Cifrado(string mensaje){
         for (int i = 0; i < mensaje.size(); ++i) {
             palabra.push_back(n_a_l(l_a_n(mensaje[i])+clave));
         }
-        cout<<palabra;
+        return palabra;
+    }
+    string Descifrado(string mensaje){
+        for (int i = 0; i < mensaje.size(); ++i) {
+            palabra.push_back(n_a_l(l_a_n(mensaje[i])-clave));
+        }
+        return palabra;
     }
 };
 
 int main() {
     string mensaje = "hola";
-    Cesar().Cifrado(mensaje);
+    mensaje = Cesar().Cifrado(mensaje);
+    cout<<"Cifrado: "<<mensaje<<endl;
+    mensaje = Cesar().Descifrado(mensaje);
+    cout<<"Descifrado: "<<mensaje;
 }
