@@ -41,7 +41,7 @@ char alfabeto(int letra){
 string cambio(string texto) {
     string vuelta;
     string::const_iterator iterador1 = texto.end()-1;
-    while (iterador1 != texto.begin() -1) {
+    while (iterador1 != texto.begin()-1) {
         vuelta.push_back(*iterador1);
         iterador1--;
     }
@@ -52,7 +52,7 @@ int main(){
     int numero = 456384;
     string texto;
     int divisor = 10;
-    while (divisor<numero){
+    while (divisor/10<numero){
         texto.push_back(alfabeto((numero%divisor)/(divisor/10)));
         numero=numero-numero%divisor;
         divisor=divisor*10;

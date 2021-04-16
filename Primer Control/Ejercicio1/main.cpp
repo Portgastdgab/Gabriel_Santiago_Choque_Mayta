@@ -24,20 +24,30 @@ int main() {
     }
 
     char conversion[texto.size()];
-    for (int i = 0; i < texto.size(); ++i) {
+    for (int i = 0; i < texto.size()+1; ++i) {
         conversion[i] = texto[i];
     }
-
+    string temp;
     cout<<endl<<"Division en tokens: "<<endl;
     tokens = strtok(conversion, " ");
+    texto = "";
+    string vectores[4];
+    int cont;
     while (tokens != NULL) {
-        cout << tokens <<endl;
-        if (sizeof *tokens < bloque+1)
-        {
-            for (int i = sizeof *tokens; i < bloque+1; ++i) {
-                tokens[i] = 'X';
-            }
+        temp = tokens;
+        vectores[cont] = tokens;
+        while (temp.size()<4){
+            temp.push_back('X');
         }
+        texto.append(temp+"*");
+        cout << temp <<endl;
         tokens = strtok(NULL, " ");
+        cont++;
+    }
+    texto.erase(texto.size()-1);
+    cout<<"Texto con asteriscos: "<<texto;
+    cout<<"vectores: "<<endl;
+    for (int i = 0; i < 4; ++i) {
+        cout<<vectores[i]<<" ";
     }
 }
