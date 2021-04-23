@@ -2,15 +2,21 @@
 
 
 
-void swap(int &pos1, int &pos2)
+void swap(int arr[], int pos1, int pos2, string &fre_alf)
 {
-    int temp = pos1;
-    pos1 = pos2;
-    pos2 = temp;
+    int temp = arr[pos1];
+    arr[pos1] = arr[pos2];
+    arr[pos2] = temp;
+    char temp2 = fre_alf[pos1];
+    //cout<<fre_alf[pos1]<<" = "<< fre_alf[pos2]<<endl;
+    //cout<<fre_alf[pos2]<<" = "<<temp2<<endl;
+    fre_alf[pos1] = fre_alf[pos2];
+    fre_alf[pos2] = temp2;
+
 
 }
 
-void bubbleSort(int arr[], int n)
+void bubbleSort(int arr[], int n, string &fre_alf)
 {
     bool vuelta;
     for (int i = 0; i < n-1; i++)
@@ -20,7 +26,7 @@ void bubbleSort(int arr[], int n)
         {
             if (arr[j] < arr[j+1])
             {
-                swap(arr[j], arr[j+1]);
+                swap(arr, j, j+1, fre_alf);
                 vuelta = true;
             }
         }
@@ -31,12 +37,20 @@ void bubbleSort(int arr[], int n)
 
 void frecuencias(string mensaje) {
     string alf_fre = "abcdefghijklmnopqrstuvwxyz ";
+    int frecuencia[alf_fre.size()];
+    int contador;
     for (int i = 0; i < Cesar().alfabeto.size(); ++i) {
+        contador = 0;
         for (int j = 0; j < mensaje.size(); ++j) {
             if (Cesar().alfabeto[i] == mensaje[j]) {
-
+                contador++;
             }
         }
+        frecuencia[i] = contador;
+    }
+    cout<<"Este es el conteo: ";
+    for (int i = 0; i < alf_fre.size(); ++i) {
+        cout<<frecuencia[i]<<" ";
     }
 }
 
@@ -49,9 +63,13 @@ int main() {
     int arr[] = {64, 34, 25, 12, 22, 11, 90};
     int n = sizeof(arr)/sizeof(arr[0]);
     string alfabet= "abcdefg";
-    bubbleSort(arr, n);
+    bubbleSort(arr, n, alfabet);
     for (int i = 0; i < n; ++i) {
         cout<<arr[i]<<" ";
+    }
+    cout<<endl;
+    for (int i = 0; i < n; ++i) {
+        cout<<alfabet[i]<<" ";
     }
 
 }
