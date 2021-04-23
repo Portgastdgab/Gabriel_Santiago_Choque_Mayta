@@ -10,7 +10,7 @@ private:
     int modulo(int a, int n);
 
 public:
-    string alfabeto = "abcdefghijklmnopqrstuvwxyz ";
+    string alfabeto = "ABCDEFGHIJKLMNOPQRSTUVWXYZ abcdefghijklmnopqrstuvwxyz1234567890-.";
     string Emisor(string mensaje, int clave);
     string Receptor(string mensaje, int clave);
 };

@@ -54,10 +54,10 @@ string frecuencias(string mensaje) {
     int posible_clave;
     int iter = 0;
     for (int i = 0; i < alf_fre.size(); ++i) {
-        posible_clave = (Cesar().alfabeto.find(alf_fre[iter]) + 1) - (Cesar().alfabeto.find(espanol_rep[iter]) + 1) % 27;
+        posible_clave = (Cesar().alfabeto.find(alf_fre[iter]) + 1) - (Cesar().alfabeto.find(espanol_rep[iter]) + 1) % alf_fre.size();
 
         if (posible_clave ==
-            (Cesar().alfabeto.find(alf_fre[iter + 1]) + 1) - (Cesar().alfabeto.find(espanol_rep[iter + 1]) + 1) % 27) {
+            (Cesar().alfabeto.find(alf_fre[iter + 1]) + 1) - (Cesar().alfabeto.find(espanol_rep[iter + 1]) + 1) % alf_fre.size()) {
             break;
         } else {
             if (i % 2 == 0) {
