@@ -62,3 +62,17 @@ int Euclid_extended(int a, int b) {
 int inverse(int a, int b){
     return Euclid_extended(a, b);
 }
+
+int modular_exponentiation(int base, int exponent, int mod){
+    int reply = base;
+    exponent/=2;
+    while (exponent){
+        base = module(base*base, mod);
+        if (module(exponent, 2)){
+            reply = module(reply*base, mod);
+        }
+        cout<<"base = "<<base<<"   reply = "<<reply<<"   exponent = "<<exponent<<endl;
+        exponent/=2;
+    }
+    return reply;
+}
