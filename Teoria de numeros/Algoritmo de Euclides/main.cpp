@@ -32,6 +32,6 @@ int Euclides(int a, int b){
 }
 
 int main() {
-    int mcd = Euclides(550, 210);
+    int mcd = Euclides(10, 72);
     cout << mcd;
 }

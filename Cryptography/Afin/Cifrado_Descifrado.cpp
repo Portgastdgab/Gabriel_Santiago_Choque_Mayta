@@ -55,7 +55,7 @@ string Afin::Emisor(string mensaje, int clave_A, int clave_B) {
         clave_A = rand();
     }
     cout<<"Clave A = "<<clave_A<<endl;
-    cout<<"Clave_B = "<<clave_B<<endl<<endl;
+    cout<<"Clave_B = "<<module(clave_B, alfabeto.size())<<endl<<endl;
     for (int i = 0; i < mensaje.size(); ++i) {
         palabra.push_back(alfabeto[module( (clave_A*(alfabeto.find(mensaje[i])))+clave_B,alfabeto.size())]);
     }

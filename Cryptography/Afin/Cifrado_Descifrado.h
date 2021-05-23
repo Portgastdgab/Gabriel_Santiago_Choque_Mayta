@@ -14,7 +14,7 @@ private:
 
 public:
     int Euclid_extended(int, int);
-    string alfabeto = "abcdefghijklmnopqrstuvwxyz";
+    string alfabeto = "abcdefghijklmnopqrstuvwxyz,.-_ABCDEFGHIJKLMNOPQRSTUVWXYZ 0123456789()";
     string Emisor(string, int, int);
     string Receptor(string, int, int);
 };

@@ -41,5 +41,5 @@ int Euclid_extended(int a, int b) {
 }
 
 int main() {
-    Euclid_extended(161, 28);
+    cout<<Euclid_extended(550,210);
 }
