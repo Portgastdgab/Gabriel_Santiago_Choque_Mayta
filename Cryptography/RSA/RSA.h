@@ -1,6 +1,4 @@
-/*
-#include <iostream>
-#include <vector>
+/*#include <iostream>
 #include "../../Funciones/Funciones.h"
 
 using namespace std;

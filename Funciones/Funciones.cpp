@@ -111,3 +111,13 @@ vector<int> criba_eratostenes(int limit)
 
     return criba;
 }
+
+
+vector <int> prime_bits(int bit){ //devuelve los elementos primos segun el numero de bits que pide
+    vector <int> primos = criba_eratostenes(pow(2, bit)-1);
+    vector<int>::iterator it = primos.begin();
+    while (*it < pow(2, bit)/2){
+        primos.erase(it);
+    }
+    return primos;
+};
