@@ -1,34 +1,29 @@
-/*#include <iostream>
+#include <iostream>
 #include "../../Funciones/Funciones.h"
 
 using namespace std;
 
 class RSA {
-public:
-    RSA(int bits);
+private:
+    int d;
+    int p;
+    int q;
+    string alfabeto = "abcdefghijklmnopqrstuvwxyz ";
 
+public:
+    int e;
+    int N;
+    string message;
+    vector <int> encrypted_letter;
+    RSA(int);
     RSA(int, int);
 
 //    virtual ~RSA(void);
+//    int resto_chino(int);
 
-    int resto_chino(int);
+    void chiper(string);
+    string dechiper(vector <int>);
+    void show_encryption();
+    void show_decryption();
+};
 
-    string cifrar(string);
-
-    string descifra_mensaje(string);
-
-    //vector extendido_euclides(int a, int b);
-
-
-    int generar_aleatorio(int);
-
-    bool test_primalidad(int);
-
-private:
-    int d;
-    int e;
-    int N;
-    int p;
-    int q;
-    string alfabeto;
-};*/

@@ -28,6 +28,9 @@ int Euclid(int a, int b){
 
 }
 
+int mcd(int a, int b){
+    return Euclid(a, b);
+}
 
 int Euclid_extended(int a, int b) {
     int cont = 0;
